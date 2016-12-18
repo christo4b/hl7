@@ -29,27 +29,49 @@ module.exports = [{
   nationality: "american",
   patient_death_date_and_time: "",
   patient_death_indicator: "",
-  set_ID_pv1:
-  patient_class:
-  assigned_patient_location:
-  admission_type:
-  preadmit_number:
-  prior_patient_location:
-  attending_doctor:
-  referring_doctor:
-  consulting_doctor:
-  hospital_service:
-  temporary_location:
-  preadmit_test_indicator:
-  re_admission_indicator:
-  admit_source:
-  ambulatory_status:
-  vip_indicator:
-  admitting_doctor:
-  patient_type:
-  visit_number:
-  financial_class:
-  charge_price_indicator:
+  set_ID_pv1: '',
+  patient_class: '',
+  assigned_patient_location: '',
+  admission_type: '',
+  preadmit_number: '',
+  prior_patient_location: '',
+  attending_doctor: '',
+  referring_doctor: '',
+  consulting_doctor: '',
+  hospital_service: '',
+  temporary_location: '',
+  preadmit_test_indicator: '',
+  re_admission_indicator: '',
+  admit_source: '',
+  ambulatory_status: '',
+  vip_indicator: '',
+  admitting_doctor: '',
+  patient_type: '',
+  visit_number: '',
+  financial_class: '',
+  charge_price_indicator: '',
+  visit_number: '',
+  financial_class: '',
+  charge_price_indicator: '',
+  courtesy_code: '',
+  credit_rating: '',
+  contract_code: '',
+  contract_effective_date: '',
+  contract_amount: '',
+  contract_period: '',
+  interest_code: '',
+  transfer_to_bad_debt_code: '',
+  transfer_to_bad_debt_date: '',
+  bad_debt_agency_code: '',
+  bad_debt_transfer_amount: '',
+  bad_debt_recovery_amount: '',
+  delete_account_indicator: '',
+  delete_account_date: '',
+  discharge_disposition: '',
+  discharged_to_location: '',
+  diet_type: '',
+  servicing_facility: '',
+  bed_status: ''
 },
 {
   set_ID_pid: 8888,
@@ -82,25 +104,51 @@ module.exports = [{
   nationality: "american",
   patient_death_date_and_time: "Sat Dec 17 2016 20:26:31 GMT-0800 (PST)",
   patient_death_indicator: "Y",
-  set_ID_pv1:
-  patient_class:
-  assigned_patient_location:
-  admission_type:
-  preadmit_number:
-  prior_patient_location:
-  attending_doctor:
-  referring_doctor:
-  consulting_doctor:
-  hospital_service:
-  temporary_location:
-  preadmit_test_indicator:
-  re_admission_indicator:
-  admit_source:
-  ambulatory_status:
-  vip_indicator:
-  admitting_doctor:
-  patient_type:
-  visit_number:
-  financial_class:
-  charge_price_indicator:
-}]
+  set_ID_pv1: '',
+  patient_class: '',
+  assigned_patient_location: '',
+  admission_type: '',
+  preadmit_number: '',
+  prior_patient_location: '',
+  attending_doctor: '',
+  referring_doctor: '',
+  consulting_doctor: '',
+  hospital_service: '',
+  temporary_location: '',
+  preadmit_test_indicator: '',
+  re_admission_indicator: '',
+  admit_source: '',
+  ambulatory_status: '',
+  vip_indicator: '',
+  admitting_doctor: '',
+  patient_type: '',
+  visit_number: '',
+  financial_class: '',
+  charge_price_indicator: '',
+  visit_number: '',
+  financial_class: '',
+  charge_price_indicator: '',
+  courtesy_code: '',
+  credit_rating: '',
+  contract_code: '',
+  contract_effective_date: '',
+  contract_amount: '',
+  contract_period: '',
+  interest_code: '',
+  transfer_to_bad_debt_code: '',
+  transfer_to_bad_debt_date: '',
+  bad_debt_agency_code: '',
+  bad_debt_transfer_amount: '',
+  bad_debt_recovery_amount: '',
+  delete_account_indicator: '',
+  delete_account_date: '',
+  discharge_disposition: '',
+  discharged_to_location: '',
+  diet_type: '',
+  servicing_facility: '',
+  bed_status: ''
+}];
+
+// (`PID|${msg.set_ID_pid || ''}|${msg.external_ID || ''}|${msg.internal_ID || ''}|${msg.alternate_patient_ID || ''}|${msg.patient_name || ''}|${msg.mothers_maiden_name || ''}|${msg.birth_date_time || ''}|${msg.sex || ''}|${msg.patient_alias || ''}|${msg.race || ''}|${msg.patient_address || ''}|${msg.county_code || ''}|${msg.phone_number_home || ''}|${msg.phone_number_business || ''}|${msg.primary_language || ''}|${msg.marital_status || ''}|${msg.religion || ''}|${msg.patient_account_number || ''}|${msg.ssn_number || ''}|${msg.drivers_license_number || ''}|${msg.mothers_identifier || ''}|${msg.ethnic_group || ''}|${msg.birth_place || ''}|${msg.multiple_birth_indicator || ''}|${msg.birth_order || ''}|${msg.citizenship || ''}|${msg.veterans_military_status || ''}|${msg.nationality || ''}|${msg.patient_death_date_and_time || ''}|${msg.patient_death_indicator || ''}
+// PV1|${msg.set_ID_pv1 || ''}|${msg.patient_class || ''}|${msg.assigned_patient_location || ''}|${msg.admission_type || ''}|${msg.preadmit_number || ''}|${msg.prior_patient_location || ''}|${msg.attending_doctor || ''}|${msg.referring_doctor || ''}|${msg.consulting_doctor || ''}|${msg.hospital_service || ''}|${msg.temporary_location || ''}|${msg.preadmit_test_indicator || ''}|${msg.re_admission_indicator || ''}|${msg.admit_source || ''}|${msg.ambulatory_status || ''}|${msg.vip_indicator || ''}|${msg.admitting_doctor || ''}|${msg.patient_type || ''}|${msg.visit_number || ''}|${msg.financial_class || ''}|${msg.charge_price_indicator || ''}|${msg.visit_number || ''}|${msg.financial_class || ''}|${msg.charge_price_indicator || ''}|${msg.courtesy_code || ''}|${msg.credit_rating || ''}|${msg.contract_code || ''}|${msg.contract_effective_date || ''}|${msg.contract_amount || ''}|${msg.contract_period || ''}|${msg.interest_code || ''}|${msg.transfer_to_bad_debt_code || ''}|${msg.transfer_to_bad_debt_date || ''}|${msg.bad_debt_agency_code || ''}|${msg.bad_debt_transfer_amount || ''}|${msg.bad_debt_recovery_amount || ''}|${msg.delete_account_indicator || ''}|${msg.delete_account_date || ''}|${msg.discharge_disposition || ''}|${msg.discharged_to_location || ''}|${msg.diet_type || ''}|${msg.servicing_facility || ''}|${msg.bed_status || ''}
+// `)

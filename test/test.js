@@ -65,8 +65,8 @@ describe("HL7 class", function(){
         done()
       })
 
-    })  
-  }) 
+    })
+  })
 })
 
 
