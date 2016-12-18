@@ -1,9 +1,15 @@
 const assert = require('assert')
 const request = require('request')
+const { expect } = require('chai')
 const { app, closeServer } = require('../server.js')
-const hl7 = require('../class.js')
+const hl7Class = require('../class.js')
 
-describe('Array', function() {
+const hl7 = new hl7Class()
+
+// console.log(new hl7Class())
+// console.log(hl7Class.parse(123))
+
+xdescribe('Array', function() {
   describe('#indexOf()', function() {
     it('should return -1 when the value is not present', function() {
       assert.equal(-1, [1,2,3].indexOf(4));
@@ -11,7 +17,7 @@ describe('Array', function() {
   });
 });
 
-describe("Server Running", function(){
+xdescribe("Server Running", function(){
   describe("GET /", function(){
     it("returns status code 200", function(done){
       request.get("http://localhost:7777/", function(err, res, body){
@@ -33,6 +39,14 @@ describe("Server Running", function(){
   })
 })
 
+describe("HL7 class basic tests", function(){
+  describe("checking methods", function(){
+    it("hl7 class has a method parse that is a function", function(done){
+      expect(hl7.parse).to.be.a('function')
+      done()
+    })
+  })
+})
 
 
 

@@ -1,14 +1,9 @@
-class hl7 {
+class HL7 {
 
-  parse(mrn){
+  parse(mrn) {
     return `PID : ${ mrn } ` 
   }
 
 }
 
-var newMessage = new hl7()
-newMessage.parse(1235)
-
-module.exports = {
-  class: hl7
-}
+module.exports = HL7
