@@ -3,6 +3,7 @@ const request = require('request')
 const { expect } = require('chai')
 const { app, closeServer } = require('../server.js')
 const hl7Class = require('../src/class.js')
+const testData = require('./testData.js')
 
 const hl7 = new hl7Class()
 
@@ -56,10 +57,7 @@ describe("HL7 class", function(){
     })
 
     describe("Checks to make sure we have required items", function(){
-      const passingMsg = {
-        internalID: 8675309,
-        patientName: 'KLEINSAMPLE^BARRY^Q^JR'
-      }
+      const passingMsg = testData[0]
 
       it("checks for patient ID and patient Name", function(done){
         expect(()=> hl7.parse(passingMsg)).to.not.throw(Error)
@@ -67,8 +65,7 @@ describe("HL7 class", function(){
         done()
       })
 
-    })
-
+    })  
   }) 
 })
 
