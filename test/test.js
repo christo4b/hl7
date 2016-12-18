@@ -46,5 +46,17 @@ describe("HL7 class", function(){
 
 })
 
+describe("parse function", function (){
+
+  it("throws an error if not given any data", function(done){
+    expect(function(){
+      hl7.parse()
+    }).to.throw(Error)
+    done()
+  })
+
+
+
+}) 
 
 
