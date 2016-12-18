@@ -10,10 +10,10 @@ const server = app.listen(port, ()=> {
   console.log("Server running on port:", port)
 })
 
-
 module.exports = { 
   app: app,
   closeServer: function(){
+    console.log(`Closing server on port ${port}`)
     server.close()
   }
 }
