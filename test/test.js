@@ -6,7 +6,7 @@ const hl7Class = require('../src/class.js')
 
 const hl7 = new hl7Class()
 
-xdescribe("Server Running", function () {
+describe("Server Running", function () {
   describe("GET /", function () {
     it("returns status code 200", function (done) {
       request.get("http://localhost:7777/", function (err, res, body) {
@@ -29,41 +29,49 @@ xdescribe("Server Running", function () {
 })
 
 describe("HL7 class", function(){
-  // tests to see if class has props such as | ^ & (the delimiters)
-  // xdescribe("contains helper properties", function(){
-  //   it("contains helper strings for creating HL7 strings", function(done){
-      
-  //     done()
-  //   })
-  // })
 
-  describe("checks for existence of helper functions", function(){
-    it("instance has a method parse that is a function", function(done){
+  describe("Parse function", function (){
+    it("method parse is a function", function(done){
       expect(hl7.parse).to.be.a('function')
       done()
     })
-  })
 
+    it("throws an error if not given any data", function(done){
+      expect(()=>hl7.parse()).to.throw(Error)
+      done()
+    })
+
+    it("accepts only one argument", function(done) {
+      expect(()=> hl7.parse({}).to.not.throw(Error))
+      expect(()=> hl7.parse({},'secondArg').to.throw(Error))
+      done()
+    })
+
+    it("does not accept an Array or a function", function(done){
+      const taco = function(){};
+      expect(()=> hl7.parse({}).to.not.throw(Error))
+      expect(()=> hl7.parse([]).to.throw(Error))
+      expect(()=> hl7.parse(taco).to.throw(Error))
+      done()
+    })
+
+    describe("Checks to make sure we have required items", function(){
+      const passingMsg = {
+        internalID: 8675309,
+        patientName: 'KLEINSAMPLE^BARRY^Q^JR'
+      }
+
+      it("checks for patient ID and patient Name", function(done){
+        expect(()=> hl7.parse(passingMsg)).to.not.throw(Error)
+        expect(()=> hl7.parse({failing: 23423})).to.throw(Error)
+        done()
+      })
+
+    })
+
+  }) 
 })
 
-describe("parse function", function (){
 
-  it("throws an error if not given any data", function(done){
-    expect(()=>hl7.parse()).to.throw(Error)
-    done()
-  })
-
-  it("accepts one argument", function(done) {
-    expect(()=> hl7.parse({}).to.not.throw(Error))
-    expect(()=> hl7.parse({},'secondArg').to.throw(Error))
-    done()
-  })
-
-  it("does not accept an Array", function(done){
-    expect(()=> hl7.parse({}).to.not.throw(Error))
-    expect(()=> hl7.parse([]).to.throw(Error))
-    done()
-  })
-}) 
 
 
