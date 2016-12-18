@@ -17,6 +17,14 @@ describe("Server Running", function(){
       request.get("http://localhost:7777/", function(err, res, body){
         console.log(err)
         assert.equal(200, res.statusCode)
+        
+        done()
+      })
+    })
+
+    it("sends back Hello Hl7", function(done){
+      request.get("http://localhost:7777/", function(err, res, body){
+        assert.equal("Hello HL7", body)
         closeServer()
         done()
       })
