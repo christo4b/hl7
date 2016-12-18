@@ -49,14 +49,21 @@ describe("HL7 class", function(){
 describe("parse function", function (){
 
   it("throws an error if not given any data", function(done){
-    expect(function(){
-      hl7.parse()
-    }).to.throw(Error)
+    expect(()=>hl7.parse()).to.throw(Error)
     done()
   })
 
+  it("accepts one argument", function(done) {
+    expect(()=> hl7.parse({}).to.not.throw(Error))
+    expect(()=> hl7.parse({},'secondArg').to.throw(Error))
+    done()
+  })
 
-
+  it("does not accept an Array", function(done){
+    expect(()=> hl7.parse({}).to.not.throw(Error))
+    expect(()=> hl7.parse([]).to.throw(Error))
+    done()
+  })
 }) 
 
 
