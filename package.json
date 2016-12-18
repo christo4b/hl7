@@ -7,7 +7,9 @@
   "author": "Chris Bassano <christo4b@gmail.com>",
   "license": "MIT",
   "dependencies": {
-    "mocha": "^3.2.0"
+    "express": "^4.14.0",
+    "mocha": "^3.2.0",
+    "request": "^2.79.0"
   },
   "scripts": {
     "test": "mocha"
