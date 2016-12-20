@@ -4,6 +4,7 @@ const validateInput = require('./validate')
 class HL7 {
   parse (msg) {
     validateInput(msg)
+    // return createHL7String(msg)
     console.log(createHL7String(msg))
   }
 }

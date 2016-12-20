@@ -7,7 +7,7 @@ const testData = require('./testData.js')
 
 const hl7 = new hl7Class()
 
-describe("Server Running", function () {
+xdescribe("Server Running", function () {
   describe("GET /", function () {
     it("returns status code 200", function (done) {
       request.get("http://localhost:7777/", function (err, res, body) {
@@ -57,12 +57,12 @@ describe("HL7 class", function(){
     })
 
     describe("Checks to make sure we have required items", function(){
-      const passingMsg = testData[0]
-
-      it("checks for patient ID and patient Name", function(done){
-        expect(()=> hl7.parse(passingMsg)).to.not.throw(Error)
-        expect(()=> hl7.parse({failing: 23423})).to.throw(Error)
-        done()
+      testData.forEach(function(msg){
+        it("checks for patient ID and patient Name", function(done){
+          expect(()=> hl7.parse(msg)).to.not.throw(Error)
+          expect(()=> hl7.parse({failing: 23423})).to.throw(Error)
+          done()
+        })
       })
 
     })
