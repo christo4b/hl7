@@ -5,6 +5,7 @@ const validateInput = function (msg) {
   if (typeof arguments[0] === 'function') throw new Error('invalid data format passed to parse()')
   if (!msg.internal_ID) throw new Error('missing internal_ID')
   if (!msg.patient_name) throw new Error('missing patient_name')
+  if (!msg.patient_class) throw new Error('missing patient_class')    
 }
 
 module.exports = validateInput

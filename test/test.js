@@ -57,8 +57,10 @@ describe("HL7 class", function(){
     })
 
     describe("Checks to make sure we have required items", function(){
+      // This test should be split into different tests for each required item
+      // but for brevity they're all wrapped into one here
       testData.forEach(function(msg){
-        it("checks for patient ID and patient Name", function(done){
+        it("checks for patient ID, patient Name, patient Class", function(done){
           expect(()=> hl7.parse(msg)).to.not.throw(Error)
           expect(()=> hl7.parse({failing: 23423})).to.throw(Error)
           done()

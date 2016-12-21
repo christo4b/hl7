@@ -5,25 +5,19 @@
     <title>title</title>
   </head>
   <body>
-    <script
-      src="https://code.jquery.com/jquery-3.1.1.min.js"
-      integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
-      crossorigin="anonymous"></script>
 
     <h2> HL7 Message Creator </h2>
-    <form  method='post'>
-      <input type="text" name="set_ID_pid"> Set ID pid <br>
-      <input type="text" name="external_ID"> External ID <br>
-      <!-- TODO: Change this to red until it's filled out -->
+    <form method='post'>
+      <h4> PID Fields </h4>
+      <input type="text" name="set_ID_pid" value="1234"> Set ID pid <br>
+      <input type="text" name="external_ID" value="999999"> External ID <br>
       <input type="text" name="internal_ID" required> Internal ID <br>
       <input type="text" name="alternate_patient_ID"> Alternate Patient ID <br>
-      <!-- TODO: Change this to red until it's filled out -->
       <input type="text" name="patient_last_name" required> Patient Last Name <br>
       <input type="text" name="patient_first_name" required> Patient First Name <br>
-      <input type="text" name="mothers_maiden_name"> Mothers Maiden Name<br>
-      <!-- TODO: Make DATE PICKER UI -->
-      <input type="date" name="birth_date_time"> Birth Date Time <br>       
-      <select name="sex"> 
+      <input type="text" name="mothers_maiden_name" value="SMITHJONES"> Mothers Maiden Name<br>
+      <input type="date" name="birth_date_time" value="1943-10-02"> Birth Date Time <br>       
+      <select name="sex" value="F"> 
         <option value="M"> Male </option>
         <option value="F"> Female </option>
         <option value="U"> Unknown </option>
@@ -31,6 +25,18 @@
       </select> Sex <br>
       <input type="text" name="patient_alias"> Patient Alias <br>
       <input type="text" name="race"> Race <br>
+      <h4> PV1 Fields </h4>
+      <input type="text" name="set_ID_pv1" value=''> Set ID PV1 <br>
+      <input type="text" name="patient_class" required> Patient Class<br>
+      <input type="text" name="assigned_patient_location" value=''> Assigned Patient Location <br>
+      <input type="text" name="admission_type" value='INPATIENT'> Admission Type <br>
+      <input type="text" name="preadmit_number" value='34'> PreAdmit Number <br>
+      <input type="text" name="prior_patient_location" value=''> Prior Patient Location <br>
+      <input type="text" name="attending_doctor" value='TODLOCK'> Attending Doctor <br>
+      <input type="text" name="referring_doctor" value='SMITH'> Referring Doctor <br>
+      <input type="text" name="consulting_doctor" value=''> Consulting Doctor <br>
+      <input type="text" name="hospital_service" value='CARDIAC'> Hospital Service <br>
+      <input type="text" name="temporary_location" value='34M'> Temporary Location <br>
       <input type="submit">
     </form>
 

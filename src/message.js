@@ -1,4 +1,4 @@
-// chk evaluates whether we're given a user-inputted value. if not, sends an empty string
+// chk evaluates whether we're given a user-input value. if not, sends an empty string
 const chk = (val) => val || ''
 
 const createHL7String = (msg) => {
