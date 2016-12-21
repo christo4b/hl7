@@ -11,23 +11,27 @@
       crossorigin="anonymous"></script>
 
     <form  method='post'>
-      <input type="text" name="set_ID_pid"> set ID pid <br>
-      <input type="text" name="external_ID"> external ID <br>
+      <input type="text" name="set_ID_pid"> Set ID pid <br>
+      <input type="text" name="external_ID"> External ID <br>
       <!-- TODO: Make Internal ID required -->
       <!-- TODO: Change this to red until it's filled out -->
-      <input type="text" name="internal_ID"> internal ID <br>
-      <input type="text" name="alternate_patient_ID"> alternate patient ID <br>
-      <!-- TODO: Split patient name into different fields to be concat in server -->
+      <input type="text" name="internal_ID" required> Internal ID <br>
+      <input type="text" name="alternate_patient_ID"> Alternate patient ID <br>
+      
       <!-- TODO: Change this to red until it's filled out -->
-      <input type="text" name="patient_name"> patient name <br>
-      <input type="text" name="mothers_maiden_name"> mothers maiden name<br>
+      <input type="text" name="patient_last_name" required> Patient Last Name <br>
+      <input type="text" name="patient_first_name" required> Patient First Name <br>
+      <input type="text" name="mothers_maiden_name"> Mothers Maiden Name<br>
       <!-- TODO: Make DATE PICKER UI -->
-      <input type="text" name="birth_date_time"> birth date time <br> 
-      <!-- TODO: Make Dropdown menu from table (FMUO) -->
-      <input type="text" name="sex"> sex <br>
-      <input type="text" name="patient_alias"> patient alias <br>
-      <input type="text" name="race"> race <br>
-      <input type="text" name="patient_address"> patient address <br>
+      <input type="date" name="birth_date_time"> Birth Date Time <br>       
+      <select name="sex"> 
+        <option value="M"> Male </option>
+        <option value="F"> Female </option>
+        <option value="U"> Unknown </option>
+        <option value="O"> Other </option>
+      </select> Sex <br>
+      <input type="text" name="patient_alias"> Patient Alias <br>
+      <input type="text" name="race"> Race <br>
       <input type="submit">
     </form>
 
