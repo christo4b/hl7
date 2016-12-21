@@ -17,10 +17,10 @@ const server = app.listen(port, () => {
 })
 
 app.post('/', function(req, res) {
-  console.log(req.body)
   const msg = new HL7()
   req.body.patient_name = concatName(req.body.patient_last_name, req.body.patient_first_name)
-  msg.parse(req.body)
+  const newMsg = msg.parse(req.body)
+  console.log(newMsg)
 })
 
 module.exports = {
