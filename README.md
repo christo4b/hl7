@@ -32,3 +32,5 @@ To see the program in action, use the `grunt` command in your terminal to set up
 
 ## Other Considerations
 This repository only formats data into the PID and PV1 sections of HL7 strings. This program does not store data. 
+
+The patient name segment only has fields for first and last name. Normally this segment follows the [XPN - Extended Patient Name](http://hl7-definition.caristix.com:9010/HL7%20v2.3.1/segment/Default.aspx?version=HL7%20v2.3.1&dataType=XPN) structure which has up to 8 fields. I used only first and last name for simplicity.
