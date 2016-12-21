@@ -5,25 +5,31 @@
     <title>title</title>
   </head>
   <body>
-    <form enctype="application/json">
-      <input type="text" name="patient_name">
-      <button type="submit"> submit data </button>
+    <script
+      src="https://code.jquery.com/jquery-3.1.1.min.js"
+      integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
+      crossorigin="anonymous"></script>
+
+    <form  method='post'>
+      <input type="text" name="set_ID_pid"> set ID pid <br>
+      <input type="text" name="external_ID"> external ID <br>
+      <!-- TODO: Make Internal ID required -->
+      <!-- TODO: Change this to red until it's filled out -->
+      <input type="text" name="internal_ID"> internal ID <br>
+      <input type="text" name="alternate_patient_ID"> alternate patient ID <br>
+      <!-- TODO: Split patient name into different fields to be concat in server -->
+      <!-- TODO: Change this to red until it's filled out -->
+      <input type="text" name="patient_name"> patient name <br>
+      <input type="text" name="mothers_maiden_name"> mothers maiden name<br>
+      <!-- TODO: Make DATE PICKER UI -->
+      <input type="text" name="birth_date_time"> birth date time <br> 
+      <!-- TODO: Make Dropdown menu from table (FMUO) -->
+      <input type="text" name="sex"> sex <br>
+      <input type="text" name="patient_alias"> patient alias <br>
+      <input type="text" name="race"> race <br>
+      <input type="text" name="patient_address"> patient address <br>
+      <input type="submit">
     </form>
-    <div class="ui form">
-      <div class="three fields">
-        <div class="field">
-          <label>First name</label>
-          <input type="text" placeholder="First Name">
-        </div>
-        <div class="field">
-          <label>Middle name</label>
-          <input type="text" placeholder="Middle Name">
-        </div>
-        <div class="field">
-          <label>Last name</label>
-          <input type="text" placeholder="Last Name">
-        </div>
-      </div>
-    </div>
+
   </body>
 </html>
