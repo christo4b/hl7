@@ -1,4 +1,4 @@
-const createHL7String = require('./message')
+const { createHL7String } = require('./message')
 const validateInput = require('./validate')
 
 class HL7 {

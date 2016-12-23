@@ -1,4 +1,4 @@
-const concatName = function (last, first){
+const concatName = function (last, first) {
   return last + '^' + first
 }
 

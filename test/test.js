@@ -4,6 +4,9 @@ const { expect } = require('chai')
 const { app, closeServer } = require('../server.js')
 const hl7Class = require('../src/class.js')
 const testData = require('./testData.js')
+const sampleStrings = require('./sampleStrings.js')
+const { concatName } = require('../src/helpers.js')
+const { createHL7String, chk } = require('../src/message.js')
 
 const hl7 = new hl7Class()
 
@@ -68,6 +71,19 @@ describe("HL7 class", function(){
       })
 
     })
+  })
+})
+
+describe("Helper functions", function(){
+  describe("createHL7String", function(){
+    it("should produce correct string", function(done){
+      testData.forEach(function(msg, i){
+        console.log("i", i)
+        assert.equal(createHL7String(testData[i]), sampleStrings[i])
+      })
+      done()
+    })
+
   })
 })
 

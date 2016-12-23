@@ -1,7 +1,7 @@
 // chk evaluates whether we're given a user-input value. if not, sends an empty string
 const chk = (val) => val || ''
 
-const createHL7String = (msg) => {
+const createHL7String = function (msg) {
   return (
       `PID|${chk(msg.set_ID_pid)}|` +
       `${chk(msg.external_ID)}|` +
@@ -80,4 +80,7 @@ const createHL7String = (msg) => {
       )
 }
 
-module.exports = createHL7String
+module.exports = {
+  createHL7String: createHL7String,
+  chk: chk
+}
